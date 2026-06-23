@@ -1,5 +1,4 @@
 gsap.registerPlugin(ScrollTrigger);
-console.log("hello world")
 
 
 let tl = gsap.timeline({
@@ -24,5 +23,37 @@ window.addEventListener("scroll", () => {
             gsap.to("header", {y: 0});
         }
     }
+    else{
+        gsap.to("header", {y: 0});
+    }
     lastscroll = currentScroll;
 });
+
+
+let h1 = document.querySelector(".about h1");
+let clutter = "";
+
+h1.textContent.split(" ").forEach((char) => {
+    clutter += ` <span>${char}</span> `;
+});
+h1.innerHTML = clutter;
+
+let t2 = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".about",
+        start: "top top",
+        end: "+=800",
+        scrub: 1,
+        pin: true,
+    }       
+})
+t2.to(".about svg", {
+    scale: 0.7,
+    filter: "blur(30px)",
+})
+t2.from(".about h1 span", {
+    opacity: 0,
+    y:20,
+    duration: 1.5,
+    stagger: 0.3,
+}, "<50%" )
