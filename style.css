@@ -134,3 +134,104 @@ header p{
   z-index:999;
   text-align: center;
 }
+
+
+.page3{
+  height: 100vh;
+  width: 100vw;
+  border-radius: 14px;
+}
+
+.page4{
+  height:100%;
+  width:100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.page4 .scrollarea{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.page4 .left{
+  height: 100vh;
+  width: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page4 .bar{
+  height: 80%;
+  width:7px;
+  left: 2px;
+  border-radius: 999px;
+  position: absolute;
+  display: flex;
+  background-color: #e1edf0;
+}
+
+.page4 .baricon{
+  position: absolute;
+  left: -17px;
+  height: 40px;
+  width: 40px;
+}
+
+.page4 .completedbar{
+  height: 0%;
+  width:7px;
+  border-radius: 999px;
+  position: absolute;
+  background-color: #00c2b3;
+}
+
+.page4 .vct{
+    margin-left: 10%;
+  font-family: roobertregular;
+  position: absolute;
+  opacity: 0; 
+}
+
+.page4 .vct1{
+  opacity: 1;
+}
+
+.page4 .vct h2{
+  margin-bottom: 2%;
+}
+
+.page4 .right{
+  height: 100%;
+  width: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page4 .vci{
+  height: 80%;
+  width: 90%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.page4 .vci_scroller{
+  width: 100%;
+}
+
+.page4 .vci_scroller img{
+  display: block;
+  height: 80vh;
+  width: 100%;
+  object-fit: cover;
+}
