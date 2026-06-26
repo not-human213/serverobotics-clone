@@ -129,3 +129,60 @@ t3.to(".page4 .vci_scroller", {
     duration: 0.5,
     ease: "none",
 }, 3);
+
+
+const canvas = document.getElementById("canvas");
+const context = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const frameCount = 50;
+
+const imgseq = {
+    frame: 1
+};
+
+const curframe = (index) => 
+    `./images/ezgif-frame-${index.toString().padStart(3, '0')}.jpg`;
+
+const images = [];
+
+for (let i = 1; i <= frameCount; i++) {  
+    const img = new Image();
+    img.src = curframe(i);
+    images.push(img);
+}
+
+
+images.forEach((img, i) => {
+    img.onload = () => {
+        console.log(`Image ${i} loaded`);
+        if (i === 0) {
+            render();
+        }
+        img.oneerror = () => {
+            console.error(`Error loading image ${i}`);
+        }
+}});
+
+function render() {
+    if(!images[imgseq.frame]) return;
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(images[imgseq.frame], 0, 0, canvas.width, canvas.height);
+}
+
+gsap.to(imgseq, {
+    frame: frameCount,
+    snap: "frame",
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".page6",
+        start: "top top",
+        end: "+=2000",
+        scrub: 1,
+        pin: true,
+        markers: true,
+        onUpdate: render,
+    }
+});

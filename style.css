@@ -29,7 +29,7 @@ header{
   left: 50%;
  transform: translateX(-50%);
    background-color: white;
-   border-radius: 10x;
+   border-radius: 10px;
     z-index: 10;  padding: 10px 14px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   white-space: nowrap;
@@ -293,4 +293,16 @@ header p{
       height: 50%;
     }
   }
+}
+
+.page6{
+  height: 100%;
+  width: 100%;
+}
+
+canvas{
+  position: sticky;
+  top:0;
+  height: 100%;
+  width: 100%;
 }
