@@ -1,4 +1,7 @@
+const locomotiveScroll = new LocomotiveScroll();
+
 gsap.registerPlugin(ScrollTrigger);
+
 
 
 let tl = gsap.timeline({
@@ -50,7 +53,7 @@ let t2 = gsap.timeline({
 t2.to(".about svg", {
     scale: 0.7,
     filter: "blur(30px)",
-})
+}, )
 t2.from(".about h1 span", {
     opacity: 0,
     x:-30,
@@ -65,7 +68,6 @@ let t3 = gsap.timeline({
         end: "+=2000",
         scrub: 1.5,
         pin: true,
-        markers: true,
     }
 })
 
